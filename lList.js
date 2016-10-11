@@ -24,4 +24,20 @@
             } catch (e) { }
         });
 
+
+   function List() {
+       var typ = undefined;
+       var lArray = [];
+        if (arguments[0] && arguments[0] instanceof List) {
+            typ = arguments[0].type; 
+            lArray = arguments[0].array; 
+        } else if (arguments[0] && arguments[0].length) {
+            try {
+                typ = arguments[0][0].constructor; 
+                arguments[1] = arguments[1] || arguments[0]; 
+            } catch (e) { }
+        };
+   }
+
+
         })();
