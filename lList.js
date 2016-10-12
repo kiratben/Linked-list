@@ -1,6 +1,7 @@
 (function () {
 
       var lInstances = {}; //Le stockage pour chaque instance 
+      var lCreated;
       //Destructeur
       var lDis = (function (q, d) {
             try {
@@ -28,6 +29,7 @@
    function List() {
        var typ = undefined;
        var lArray = [];
+       var k = lCreated;
         if (arguments[0] && arguments[0] instanceof List) {
             typ = arguments[0].type; 
             lArray = arguments[0].array; 
@@ -37,6 +39,14 @@
                 arguments[1] = arguments[1] || arguments[0]; 
             } catch (e) { }
         };
+
+
+         if (!Object.defineProperty) {
+
+            this.$type = typ;         
+            this.array = lArray;
+            this.$key = k;
+        }
    }
 
 
