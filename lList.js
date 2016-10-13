@@ -41,7 +41,25 @@
         };
 
 
-         if (!Object.defineProperty) {
+         if (Object.defineProperty) {
+                Object.defineProperty(List.prototype, 'array',
+           {
+               
+               enum: true, 
+               conf: true, 
+               get: function () {
+                   return lArray;
+               },
+               set: function (v) {
+                   if (v instanceof Array) {
+                       if (v.length) {
+                           v.forEach(function (val) { if (val.constructor !== typ) throw "ms : "; });
+                       }
+                       lArray = v;
+                   }
+               }
+           });
+         } else {
 
             this.$type = typ;         
             this.array = lArray;
