@@ -59,6 +59,14 @@
                    }
                }
            });
+
+            Object.defineProperty(List.prototype, 'key',
+           {
+               config: true,
+               get: function () {
+                   return k;
+               }
+           });
          } else {
 
             this.$type = typ;         
