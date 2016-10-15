@@ -67,6 +67,14 @@
                    return k;
                }
            });
+            Object.defineProperty(List.prototype, 'type',
+           {
+               enum: true,
+               config: true,
+               get: function () {
+                   return typ;
+               }
+           });
          } else {
 
             this.$type = typ;         
