@@ -82,6 +82,13 @@
             this.$key = k;
         }
    }
-
+ function validate(o) {
+            if (!typ) {
+                typ = o.constructor;
+            }
+            else if (o.constructor !== typ) {
+                throw "exp :";
+            }
+           }
 
         })();
