@@ -92,3 +92,13 @@
            }
 
         })();
+
+   function select(q) {
+            var sList = new List();
+            lArray.forEach(function (t) {
+                with (t)
+                    if (eval(q))
+                        sList.Add(t);
+            });
+            return sList;
+        }
