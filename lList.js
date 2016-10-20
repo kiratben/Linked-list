@@ -109,5 +109,11 @@
                 return (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
             }
         }
+// Add
+this.Add = function (o) {
+            validate(o);
+            lArray.push(o);
+        }
+
 
         })();
